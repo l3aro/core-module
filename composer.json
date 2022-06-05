@@ -1,5 +1,5 @@
 {
-    "name": "l3aro/core",
+    "name": "l3aro/core-module",
     "description": "l3aro's Core module",
     "type": "laravel-module",
     "license": "MIT",
