@@ -1,10 +1,12 @@
 {
-    "name": "nwidart/core",
-    "description": "",
+    "name": "l3aro/core",
+    "description": "l3aro's Core module",
+    "type": "laravel-module",
+    "license": "MIT",
     "authors": [
         {
-            "name": "Nicolas Widart",
-            "email": "n.widart@gmail.com"
+            "name": "l3aro",
+            "email": "dgbao1340@gmail.com"
         }
     ],
     "extra": {
