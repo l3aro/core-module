@@ -1,7 +1,3 @@
-@php
-$sidebar = app(\Modules\Core\Entities\AdminSidebar::class);
-@endphp
-
 <div x-data="{ open: false }">
     <template x-teleport="#mobile-nav-button">
         <button type="button" x-on:click="open = ! open"
@@ -30,7 +26,7 @@ $sidebar = app(\Modules\Core\Entities\AdminSidebar::class);
             <nav x-on:click.away="open = false" aria-label="Sidebar"
                 class="mt-5 flex-shrink-0 h-full divide-y divide-green-800 overflow-y-auto">
                 <div class="px-2 space-y-1">
-                    @foreach ($sidebar->getItems() as $item)
+                    @foreach ($items as $item)
                         @switch ($item[$sidebar::PROPERTY_TYPE])
                             @case($sidebar::TYPE_ITEM)
                                 <x-core::aside.link-mobile href="{{ $item[$sidebar::PROPERTY_LINK] }}"
@@ -67,7 +63,7 @@ $sidebar = app(\Modules\Core\Entities\AdminSidebar::class);
         </div>
         <nav class="mt-5 flex-1 flex flex-col divide-y divide-green-800 overflow-y-auto" aria-label="Sidebar">
             <div class="px-2 space-y-1">
-                @foreach ($sidebar->getItems() as $item)
+                @foreach ($items as $item)
                     @switch ($item[$sidebar::PROPERTY_TYPE])
                         @case($sidebar::TYPE_ITEM)
                             <x-core::aside.link href="{{ $item[$sidebar::PROPERTY_LINK] }}"

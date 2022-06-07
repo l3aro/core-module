@@ -41,8 +41,6 @@ class CoreServiceProvider extends ServiceProvider
     {
         $this->app->register(RouteServiceProvider::class);
 
-        $this->app->bind(\Modules\Core\Entities\AdminSidebar::class);
-
         $this->app->bind(\Modules\Core\Services\Contracts\AuthenticationService::class, \Modules\Core\Services\Eloquent\AuthenticationServiceEloquent::class);
         $this->app->bind(\Modules\Core\Services\Contracts\ResetPasswordService::class, \Modules\Core\Services\Eloquent\ResetPasswordServiceEloquent::class);
         $this->app->bind(\Modules\Core\Services\Contracts\UserService::class, \Modules\Core\Services\Eloquent\UserServiceEloquent::class);
@@ -88,6 +86,9 @@ class CoreServiceProvider extends ServiceProvider
         Blade::directive('boolean', function (string $value) {
             return "<?= json_encode(filter_var($value, FILTER_VALIDATE_BOOLEAN)); ?>";
         });
+
+        Blade::component("{$this->moduleNameLower}::aside", \Modules\Core\View\Components\Aside\Index::class);
+
     }
 
     /**
