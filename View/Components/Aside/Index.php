@@ -7,11 +7,6 @@ use Modules\Core\Entities\Contracts\AsideContract;
 
 class Index extends Component implements AsideContract
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
     public function __construct(public array $items = [])
     {
         $this->items = [
@@ -25,11 +20,6 @@ class Index extends Component implements AsideContract
         ];
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\View\View|string
-     */
     public function render()
     {
         return view('core::components.aside.index', [
