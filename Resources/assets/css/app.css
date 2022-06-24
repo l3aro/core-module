@@ -1,6 +1,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import './simple-mde.css';
 
 [x-cloak] {
     display: none;
@@ -14,11 +15,6 @@
     position: absolute;
 }
 
-.CodeMirror,
-.CodeMirror-scroll {
-    max-height: 500px;
-}
-
 @layer components {
     .prose pre {
         @apply relative;
@@ -26,4 +22,25 @@
     .prose pre button {
         @apply absolute text-gray-500 hover:text-gray-700 hover:shadow top-2 right-2 transition;
     }
+}
+
+.soft-scroll::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    cursor: pointer;
+}
+
+.soft-scroll::-webkit-scrollbar-track {
+    background-color: #e2e8f0;
+    cursor: pointer;
+}
+
+.soft-scroll::-webkit-scrollbar-thumb {
+    background-color: #94a3b8;
+    cursor: pointer;
+}
+
+.dark .soft-scroll::-webkit-scrollbar-thumb {
+    background-color: #334155;
+    cursor: pointer;
 }

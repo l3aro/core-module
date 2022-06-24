@@ -37,6 +37,16 @@ trait HasDataTable
         }
     }
 
+    public function paginationView()
+    {
+        return 'core::pagination.full';
+    }
+
+    public function paginationSimpleView()
+    {
+        return 'core::pagination.simple';
+    }
+
     public function updatingFilter()
     {
         $this->resetPage();

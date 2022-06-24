@@ -3,27 +3,27 @@
 namespace Modules\Core\View\Components\Aside;
 
 use Illuminate\View\Component;
-use Modules\Core\Entities\Contracts\AsideContract;
+use Modules\Core\Navigation\Navigation;
 
-class Index extends Component implements AsideContract
+class Index extends Component
 {
-    public function __construct(public array $items = [])
+    /**
+     * Create a new component instance.
+     *
+     * @return void
+     */
+    public function __construct(Navigation $navigation, public array $menu = [])
     {
-        $this->items = [
-            // [
-            //     self::PROPERTY_TYPE => self::TYPE_ITEM,
-            //     self::PROPERTY_TITLE => __('Dashboard'),
-            //     self::PROPERTY_LINK => route('admin.dashboard'),
-            //     self::PROPERTY_ICON => 'heroicon-o-database',
-            //     self::PROPERTY_ACTIVE => request()->routeIs('admin.dashboard'),
-            // ],
-        ];
+        $this->menu = $navigation->toArray();
     }
 
+    /**
+     * Get the view / contents that represent the component.
+     *
+     * @return \Illuminate\View\View|string
+     */
     public function render()
     {
-        return view('core::components.aside.index', [
-            'sidebar' => self::class,
-        ]);
+        return view('core::components.aside.index');
     }
 }
