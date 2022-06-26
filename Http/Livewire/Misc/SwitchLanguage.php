@@ -15,7 +15,7 @@ class SwitchLanguage extends Component
 
     public function render()
     {
-        return view('core::livewire.misc.switch-language');
+        return view('core::livewire.misc.switch-language', []);
     }
 
     public function getShouldShowSwitcherProperty()
