@@ -10,12 +10,12 @@ class SwitchLanguage extends Component
 
     public function mount()
     {
-        $this->listLocale = config('app.locales');
+        $this->listLocale = config('app.locales', []);
     }
 
     public function render()
     {
-        return view('core::livewire.misc.switch-language', []);
+        return view('core::livewire.misc.switch-language');
     }
 
     public function getShouldShowSwitcherProperty()
