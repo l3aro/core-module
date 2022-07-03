@@ -29,7 +29,6 @@
         "spatie/laravel-medialibrary": "^10.3",
         "mhmiton/laravel-modules-livewire": "^1.5",
         "wireui/wireui": "^1.6",
-        "spatie/laravel-translatable": "^6.0",
-        "cviebrock/eloquent-sluggable": "^9.0"
+        "spatie/laravel-translatable": "^6.0"
     }
 }
