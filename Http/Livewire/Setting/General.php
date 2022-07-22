@@ -2,16 +2,19 @@
 
 namespace Modules\Core\Http\Livewire\Setting;
 
+use Illuminate\Support\Str;
 use Livewire\Component;
 use Modules\Core\Http\Livewire\Plugins\LoadLayoutView;
+use Modules\Core\Http\Livewire\Plugins\WatchLanguageChange;
 use Modules\Core\Models\Setting;
-use Illuminate\Support\Str;
 
 class General extends Component
 {
     use LoadLayoutView;
+    use WatchLanguageChange;
 
     public $viewPath = 'core::livewire.setting.general';
+
     public $setting = [];
 
     protected $rules = [
@@ -25,7 +28,25 @@ class General extends Component
         'setting.site_google_analytics' => '',
     ];
 
+    protected $listeners = ['languageSwitched'];
+
+    public function languageSwitched()
+    {
+        $this->fetchLocale();
+        $this->resetState();
+    }
+
+    public function hydrate()
+    {
+        $this->applyLocale();
+    }
+
     public function mount()
+    {
+        $this->resetState();
+    }
+
+    public function resetState()
     {
         $generalSetting = collect($this->rules)
             ->keys()
