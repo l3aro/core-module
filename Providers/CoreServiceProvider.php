@@ -2,8 +2,8 @@
 
 namespace Modules\Core\Providers;
 
-use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Blade;
 use Spatie\Translatable\Facades\Translatable;
 
 class CoreServiceProvider extends ServiceProvider
@@ -29,7 +29,7 @@ class CoreServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
-        require_once module_path($this->moduleName, 'helpers.php');
+        require_once(module_path($this->moduleName, 'helpers.php'));
         Translatable::fallback(
             fallbackAny: true,
         );
