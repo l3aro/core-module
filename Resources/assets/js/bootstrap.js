@@ -11,24 +11,28 @@ import { Fancybox } from '@fancyapps/ui'
 import '@fancyapps/ui/dist/fancybox.css'
 
 import AOS from 'aos'
-require('aos/dist/aos.css')
+import 'aos/dist/aos.css'
 
-require('livewire-sortable')
+import 'livewire-sortable'
 
-import SimpleMDE from 'simplemde'
-require('simplemde/dist/simplemde.min.css')
+// import SimpleMDE from 'simplemde'
+// import 'simplemde/dist/simplemde.min.css'
+
+import EasyMDE from 'easymde'
+import 'easymde/dist/easymde.min.css'
 
 import { parse } from 'marked'
 
 import Tagify from '@yaireo/tagify'
-require('@yaireo/tagify/dist/tagify.css')
+import '@yaireo/tagify/dist/tagify.css'
 
 import Prism from 'prismjs'
-require('prismjs/themes/prism.css')
+// import 'prismjs/themes/prism-tomorrow.css'
+import '../css/prism-onedark.css'
 import 'prismjs/components/prism-markup-templating'
 import 'prismjs/components/prism-php'
 import 'prismjs/components/prism-bash'
-const Turbo = require('turbolinks')
+import Turbo from 'turbolinks'
 
 Alpine.plugin(focus)
 Alpine.plugin(collapse)
@@ -36,7 +40,7 @@ window.Alpine = Alpine
 window.flatpickr = flatpickr
 window.createPopper = createPopper
 window.Fancybox = Fancybox
-window.SimpleMDE = SimpleMDE
+window.SimpleMDE = EasyMDE
 window.AOS = AOS
 window.markdownParse = parse
 window.Tagify = Tagify
