@@ -14,7 +14,8 @@ switch ($size) {
 }
 @endphp
 
-<div class="bg-white overflow-hidden shadow rounded-lg {{ $sizeClasses }}">
+<div
+    class="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg {{ $sizeClasses }} flex flex-col justify-between">
     <div class="p-5 max-h-44 overflow-y-auto">
         <div class="flex items-center">
             @isset($icon)
@@ -28,7 +29,7 @@ switch ($size) {
         </div>
     </div>
     @isset($footer)
-        <div class="bg-gray-50 px-5 py-3">
+        <div class="bg-gray-50 dark:bg-gray-700 px-5 py-3">
             <div class="text-sm">
                 {{ $footer }}
             </div>
