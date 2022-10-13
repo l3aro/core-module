@@ -32,6 +32,9 @@ import '../css/prism-onedark.css'
 import 'prismjs/components/prism-markup-templating'
 import 'prismjs/components/prism-php'
 import 'prismjs/components/prism-bash'
+import 'prismjs/components/prism-diff'
+import 'prismjs/plugins/diff-highlight/prism-diff-highlight'
+import 'prismjs/plugins/diff-highlight/prism-diff-highlight.css'
 import Turbo from 'turbolinks'
 
 Alpine.plugin(focus)
@@ -45,3 +48,4 @@ window.AOS = AOS
 window.markdownParse = parse
 window.Tagify = Tagify
 window.Prism = Prism
+window.Turbo = Turbo
