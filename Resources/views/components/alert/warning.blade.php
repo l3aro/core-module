@@ -1,7 +1,7 @@
 <div class="rounded-md bg-yellow-50 p-4" x-data="{ open: true }" x-show="open" x-transition>
     <div class="flex">
         <div class="flex-shrink-0">
-            <x-heroicon-s-exclamation  class="h-5 w-5 text-yellow-400" />
+            <x-heroicon-s-exclamation-triangle  class="h-5 w-5 text-yellow-400" />
         </div>
         <div class="ml-3">
             <p class="text-sm font-medium text-yellow-800">
