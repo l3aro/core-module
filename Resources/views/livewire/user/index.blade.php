@@ -23,7 +23,7 @@
             <x-core::dropdown width="w-72">
                 <x-slot name="trigger">
                     <x-core::button.secondary type="button">
-                        <x-heroicon-o-filter class="w-5 h-5" />
+                        <x-heroicon-o-funnel class="w-5 h-5" />
                     </x-core::button.secondary>
                     </span>
                 </x-slot>
