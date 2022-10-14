@@ -57,7 +57,7 @@ $field ??= $attributes->wire('model')->value() ?? '';
                                     justify-center hover:text-secondary-500 focus:outline-none
                                 "
                                     x-on:click.stop="unSelect(selected.value)" type="button">
-                                    <x-heroicon-s-x class="w-3 h-3" />
+                                    <x-heroicon-s-x-mark class="w-3 h-3" />
                                 </button>
                             </span>
                         </template>
@@ -69,7 +69,7 @@ $field ??= $attributes->wire('model')->value() ?? '';
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 gap-x-2">
                     <button class="focus:outline-none" x-show="!isEmptyModel() && !disabled && !readonly"
                         x-on:click="clearModel" type="button">
-                        <x-heroicon-s-x class="w-4 h-4 text-secondary-400 hover:text-negative-400" />
+                        <x-heroicon-s-x-mark class="w-4 h-4 text-secondary-400 hover:text-negative-400" />
                     </button>
 
                     <button class="focus:outline-none" x-on:click="togglePopover" type="button">
