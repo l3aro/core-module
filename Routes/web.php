@@ -13,7 +13,7 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/', \Modules\Core\Http\Livewire\Dashboard::class)
         ->name('admin.dashboard');
 
-    if (env('MODULE_INCLUDE_USER', true)) {
+    if (env('MODULE_INCLUDE_USER', false)) {
         Route::get('users', \Modules\Core\Http\Livewire\User\Index::class)
             ->name('admin.users.index');
         Route::get('users/create', \Modules\Core\Http\Livewire\User\Create::class)
