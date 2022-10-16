@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Enums\Concerns;
+namespace Modules\Core\Enums\Concerns;
 
 trait DefineEnumValue
 {
